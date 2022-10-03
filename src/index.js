@@ -202,7 +202,8 @@ export default class Embed {
    */
   onPaste(event) {
     const { key: service, data: url } = event.detail;
-    console.log('test onPaste')
+
+    console.debug('test onPaste');
 
     const { regex, embedUrl, width, height, id = (ids) => ids.shift() } = Embed.services[service];
     const result = regex.exec(url).slice(1);
