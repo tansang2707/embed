@@ -125,7 +125,6 @@ export default class Embed {
    * @returns {HTMLElement}
    */
   render() {
-    console.debug(this.data);
     if (!this.data.service) {
       const container = document.createElement('div');
 
@@ -202,9 +201,8 @@ export default class Embed {
    * @param {PasteEvent} event - event with pasted data
    */
   onPaste(event) {
+    return null;
     const { key: service, data: url } = event.detail;
-
-    console.debug('test onPaste');
 
     const { regex, embedUrl, width, height, id = (ids) => ids.shift() } = Embed.services[service];
     const result = regex.exec(url).slice(1);
