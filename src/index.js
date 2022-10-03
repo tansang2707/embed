@@ -125,6 +125,7 @@ export default class Embed {
    * @returns {HTMLElement}
    */
   render() {
+    console.info(this.data);
     if (!this.data.service) {
       const container = document.createElement('div');
 
