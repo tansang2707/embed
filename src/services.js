@@ -1,5 +1,8 @@
 /* eslint-disable no-useless-escape */
 export default {
+  iframe: {
+    regex: /^<iframe[^>]*>\s*<\/iframe>/,
+  },
   vimeo: {
     regex: /(?:http[s]?:\/\/)?(?:www.)?(?:player.)?vimeo\.co(?:.+\/([^\/]\d+)(?:#t=[\d]+)?s?$)/,
     embedUrl: 'https://player.vimeo.com/video/<%= remote_id %>?title=0&byline=0',
@@ -42,9 +45,9 @@ export default {
             return null;
           }
 
-          if (value === 'LL' 
-            || value.startsWith('RDMM')
-            || value.startsWith('FL')) {
+          if (value === 'LL' ||
+            value.startsWith('RDMM') ||
+            value.startsWith('FL')) {
             return null;
           }
 
@@ -170,5 +173,5 @@ export default {
     regex: /https:\/\/miro.com\/\S+(\S{12})\/(\S+)?/,
     embedUrl: 'https://miro.com/app/live-embed/<%= remote_id %>',
     html: '<iframe width="700" height="500" style="margin: 0 auto;" allowFullScreen frameBorder="0" scrolling="no"></iframe>',
-  }
+  },
 };
